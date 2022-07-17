@@ -27,7 +27,7 @@ app.get("/all", (req, res) => {
 });
 
 app.post("/submit", async (req, res) => {
-  projectData = req.body;
+  projectData = req.body ?? {};
   res.send(projectData);
 });
 

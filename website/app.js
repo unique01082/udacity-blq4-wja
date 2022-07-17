@@ -1,4 +1,5 @@
 /* Global Variables */
+const DEFAULT_UNIT = "imperial";
 const apiKey = "923fe800aca046b69819c7c974ad2e28";
 const button = document.getElementById("generate");
 const zip = document.getElementById("zip");
@@ -82,7 +83,7 @@ const updateUI = (data) => {
 const fetchData = async (params = {}) => {
   // Build endpoint string with parameters
   let url = new URL("https://api.openweathermap.org/data/2.5/weather");
-  url.searchParams.append("units", "imperial");
+  url.searchParams.append("units", DEFAULT_UNIT);
   url.searchParams.append("appId", apiKey);
   Object.keys(params).forEach((key) =>
     url.searchParams.append(key, params[key])
